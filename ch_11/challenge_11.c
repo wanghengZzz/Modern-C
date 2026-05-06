@@ -22,7 +22,7 @@ void prt_img_vector(VipsImage *img) {
   int h = vips_image_get_height(img);
   int b = vips_image_get_bands(img);
 
-  size_t out_size = w * h;
+  size_t out_size = (size_t)w * h;
   //   unsigned char *buffer = vips_image_write_to_memory(ready, &out_size);
   // vips_image_write_to_memory(ready, &out_size);
   printf("Width: %d, Height: %d, Pixels: %zu, Band: %d\n", w, h, out_size, b);
@@ -62,7 +62,7 @@ int main(int argc, char *argv[argc + 1]) {
       vips_error_exit(NULL);
   }
 
-  size_t const N = vips_image_get_width(ready) * vips_image_get_height(ready);
+  size_t const N = (size_t)vips_image_get_width(ready) * vips_image_get_height(ready);
   disjoint_set *ds = ALLOC_DISJOINT_SET(N + 1);
 
   int pixels_diff = argc > 2 ? atoi(argv[2]) : 5;

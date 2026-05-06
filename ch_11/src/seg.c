@@ -32,8 +32,8 @@ void image_seg(VipsImage *img, disjoint_set *ds, merge_cri_fn_t cri_fn,
   int h = vips_image_get_height(img);
   size_t img_sz;
   unsigned char *img_data = vips_image_write_to_memory(img, &img_sz);
-  uint32_t *val_arr = calloc(m * h, sizeof(uint32_t));
-  uint32_t *cnt_arr = malloc(m * h * sizeof(uint32_t));
+  uint32_t *val_arr = calloc((size_t)m * h, sizeof(uint32_t));
+  uint32_t *cnt_arr = malloc((size_t)m * h * sizeof(uint32_t));
 
   for (int y = 0; y < h; y++) {
     for (int x = 0; x < m; x++) {
