@@ -1,6 +1,6 @@
-## Codes for All Challenge Problems of `Modern C` by Jens Gustedt.
+## Modern C Challenges: Complete Solutions & Implementations
 
-The version of `Modern C` is the 2nd edition (minor rev. 2), as of Oct. 10, 2019.
+Comprehensive solutions for all challenge problems in the book **"Modern C" by Jens Gustedt** (2nd Edition, 2019).
 
 ## Brief Indroductions and Related Topics of Used Knowledges for the Challenges
 
