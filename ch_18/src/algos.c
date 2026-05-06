@@ -103,32 +103,6 @@ void quick_divide(container *c, int32_t l, int32_t r) {
   quick_divide(c, pivot_idx + 1, r);
 }
 
-// void lomuto_quick_divide(container *c, int32_t l, int32_t r) {
-//   if (l >= r) return;
-//   int32_t store_idx = l;
-//   void *pivot_data = CONTAINER_OFFSET(c->data, c->type_size, r);
-//   void *target;
-
-//   for (int32_t i = l; i < r; ++i) {
-//     void *curr_data = CONTAINER_OFFSET(c->data, c->type_size, i);
-
-//     if (c->cmp_fn(curr_data, pivot_data) < 0) {
-//       target = CONTAINER_OFFSET(c->data, c->type_size, store_idx);
-//       if (curr_data != target)
-//         swap(curr_data, target,
-//             c->type_size);
-//       store_idx++;
-//     }
-//   }
-//   target = CONTAINER_OFFSET(c->data, c->type_size, store_idx);
-//   if (target != pivot_data) {
-//     swap(target, pivot_data,
-//        c->type_size);
-//   }
-//   lomuto_quick_divide(c, l, store_idx - 1);
-//   lomuto_quick_divide(c, store_idx + 1, r);
-// }
-
 void *lomuto_quick_divide(void *args) {
   size_t l = ((sort_args_t *)args)->l;
   size_t r = ((sort_args_t *)args)->r;
